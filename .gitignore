@@ -1,0 +1,56 @@
+# ──────────────────────────────────────────────────────────────────────────
+# Signetix — root .gitignore (backend = Python, frontend = Node)
+# ──────────────────────────────────────────────────────────────────────────
+
+# ── Python / FastAPI backend ──────────────────────────────────────────────
+backend/venv/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local SQLite database (recreated + reseeded on startup)
+*.db
+*.sqlite3
+backend/signetix.db
+
+# Developer-uploaded category images (runtime content)
+backend/uploads/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# NOTE: backend/assets2/ (the TFLite model + label map) is intentionally
+# tracked — it's required to run inference.
+
+# ── Node / Vite frontend ──────────────────────────────────────────────────
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+*.local
+
+# Screenshot output from the design loop
+frontend/temporary screenshots/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ── Editors / OS ──────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
